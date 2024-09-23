@@ -35,7 +35,8 @@ export const generatePlaylist = async (personalityData) => {
             model: 'gpt-4',
             messages: [
                 { role: 'system', content: 'You are a music recommender AI.' },
-                { role: 'user', content: `Create a playlist for a person with the following personality traits: ${personalityData}.` }
+                { role: 'user', content: `Create a playlist for a person with the following personality traits: ${personalityData}. if you can't find a song that fits, you can make one up. The playlist should have at least 5 to max 15 songs. Include a mix of genres and moods.
+                ` }
             ],
             max_tokens: 100
         });
